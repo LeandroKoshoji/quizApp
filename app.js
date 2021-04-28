@@ -7,18 +7,15 @@ const scoreDiv = document.createElement('div')
 let userCorrectAnswersAmount = 0
 
 const getUsersAnswers = () =>{
-    const userAnswers = [
-        form.inputQuestion1.value,
-        form.inputQuestion2.value,
-        form.inputQuestion3.value,
-        form.inputQuestion4.value,
-        form.inputQuestion5.value,
-        form.inputQuestion6.value,
-        form.inputQuestion7.value,
-        form.inputQuestion8.value,
-        form.inputQuestion9.value,
-    ]
-    return userAnswers
+    let userAnswers = []
+
+    corretAnswers.forEach((_, index) => {
+        const answer = form[`inputQuestion${index + 1}`].value
+
+        userAnswers.push(answer)
+    })  
+
+    return userAnswers  
 }
 
 const reset = () => {
@@ -38,6 +35,7 @@ const checkUserAnswers = () => {
     corretAnswers.forEach((answer, index) => {
         if(getUsersAnswers()[index] === answer) {
             userCorrectAnswersAmount++
+            
         }
     })
 }
@@ -45,7 +43,7 @@ const checkUserAnswers = () => {
 form.addEventListener('submit', event => {
     event.preventDefault()
 
-    getUsersAnswers()
+    
     reset()    
     checkUserAnswers()    
     scrollTo(0,0)
