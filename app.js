@@ -46,6 +46,6 @@ form.addEventListener('submit', event => {
     
     reset()    
     checkUserAnswers()    
-    scrollTo(0,0)
+    scrollTo({top: 0, behavior: 'smooth'})
     inserScoreIntoDOM()
 })
