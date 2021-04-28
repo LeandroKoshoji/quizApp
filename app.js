@@ -1,29 +1,12 @@
-const corretAnswers = ['D', 'A', 'B', 'B', 'C', 'D', 'C', 'A']
+const corretAnswers = ['D', 'A', 'B', 'B', 'C', 'D', 'C', 'A', 'C']
 
-const form = document.querySelector('form')
-const userResultDiv = document.createElement('div')
+const form = document.querySelector('.forms')
+const quizContainer = document.querySelector('.quiz-container')
+const scoreDiv = document.createElement('div')
 
-let score = 0
 let userCorrectAnswersAmount = 0
 
-
-
-const setUserScore = (userAnswer, index) => {
-    if(userAnswer === corretAnswers[index]) {
-        userCorrectAnswersAmount++
-        score +=  12.5            
-    }
-}
-
-const addUserScoreIntoDOM = (text, className) => {
-    userResultDiv.innerHTML = text
-    userResultDiv.setAttribute('class', className)
-    form.insertAdjacentElement('afterend', userResultDiv)
-}
-
-const handleSubmit = event => {
-    event.preventDefault()
-
+const getUsersAnswers = () =>{
     const userAnswers = [
         form.inputQuestion1.value,
         form.inputQuestion2.value,
@@ -32,23 +15,39 @@ const handleSubmit = event => {
         form.inputQuestion5.value,
         form.inputQuestion6.value,
         form.inputQuestion7.value,
-        form.inputQuestion8.value
+        form.inputQuestion8.value,
+        form.inputQuestion9.value,
     ]
-
-    userAnswers.forEach(setUserScore)
-   
-    if(userCorrectAnswersAmount < 4) {
-        addUserScoreIntoDOM(
-        `<p>${`Ops! Parece que você não assistiu a Copa de 2014 rs. Você só acertou ${userCorrectAnswersAmount} de 8 perguntas e sua pontuação foi de ${score} pontos!`} <p/>`,
-        'result-div-fail')
-        return
-    }
-
-    addUserScoreIntoDOM(
-    `<p>${`Parabéns! Você acertou ${userCorrectAnswersAmount} de 8 perguntas e sua pontuação foi de ${score} pontos`}<p/>`, 
-    'result-div-success')
+    return userAnswers
 }
 
-form.addEventListener('submit', handleSubmit)
+const reset = () => {
+    userCorrectAnswersAmount = 0
+    scoreDiv.remove()
+}
 
+const inserScoreIntoDOM = () => {
+    scoreDiv.classList.add('showResult')
+    scoreDiv.innerHTML = 
+    `<h2>Resultado</h2>
+    <p>Você acertou ${userCorrectAnswersAmount} de 9 uniformes!</p>`
+    quizContainer.insertAdjacentElement('afterBegin', scoreDiv)
+}
 
+const checkUserAnswers = () => {
+    corretAnswers.forEach((answer, index) => {
+        if(getUsersAnswers()[index] === answer) {
+            userCorrectAnswersAmount++
+        }
+    })
+}
+
+form.addEventListener('submit', event => {
+    event.preventDefault()
+
+    getUsersAnswers()
+    reset()    
+    checkUserAnswers()    
+    scrollTo(0,0)
+    inserScoreIntoDOM()
+})
