@@ -65,6 +65,12 @@ img{
 .cards-container {
     position: relative;
 }
+.card {
+    display: none;
+}
+.card.active {
+    display: block;
+}
 .img-container {
     display: flex;
     justify-content: center;
@@ -96,7 +102,7 @@ label{
 }
 
 .check-result-button {
-    display: block;
+    display: none;
     border: 0;
     outline: 0;
     padding: 1rem 2rem;
