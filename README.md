@@ -4,8 +4,11 @@
 
 <p align="center">Do you know these 2014 FIFA World Cup uniforms?</p>
 
+<p align="center">
 
-<img src="assets/images/apresentacao.gif"/>
+<img align="center" src="assets/images/apresentacao.gif" />
+
+</p>
 
 </br>
 
