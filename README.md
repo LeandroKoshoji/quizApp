@@ -13,7 +13,5 @@
 </br>
 
 <p align="center"> 
-
-**Note**: I made this quiz to only measure my progress with Vanilla JS! 
-
+Note: I made this quiz to only measure my progress with Vanilla JS! 
 </p>
