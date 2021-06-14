@@ -1,0 +1,139 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: linear-gradient(180deg, #29323c 0%, #485563 100%);
+    font-weight: 400;
+    color: #FFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    min-height: 100vh;
+}
+img{
+    display: block;
+    max-width: 100%;
+}
+
+.container {
+    width: 90%;
+    margin-inline: auto;
+}
+
+.header-content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-content-container h1 {
+    font-weight: 700;
+    font-size: clamp(3rem, 4vw, 5rem);
+}
+
+.header-content-container p {
+    font-size: clamp(1.2rem, 1.5vw, 3rem);
+    text-align: center;
+}
+
+.main-content-container {
+    height: calc(100vh - 158px);
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    position: relative;
+}
+
+.progress-bar-container {
+    height: 4px;
+    border-radius: 2px;
+    width: 60%;
+    background: #fff;
+}
+.progress-bar {
+    height: 4px;
+    border-radius: 2px;
+    box-shadow: 1px 2px 3px #000;
+    background: #92B2D6;
+    width: 50%;
+}
+
+.cards-container {
+    position: relative;
+}
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inputs-container {
+    display: flex;  
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+label{
+    font-size: 1.1rem;
+    margin: 1rem;
+}
+
+.prev-button {
+    position: absolute;
+    font-size: 2.5rem;
+    left: 0;
+    top: 0;
+}
+.next-button {
+    position: absolute;
+    font-size: 2.5rem;
+    right: 0;
+    top: 0;
+}
+
+.check-result-button {
+    display: block;
+    border: 0;
+    outline: 0;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    color: #fff;
+    background-color: #92B2D6;
+    border-radius: 10px;
+}
+
+.result-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    background-color: rgba(0,0,0, .9);
+    inset: 1rem;
+}
+.result-container > * {
+    margin-bottom: 2rem;
+}
+
+.result-container h1{
+    font-weight: 700;
+    font-size: clamp(2.5rem, 4vw, 5rem);
+}
+
+.result {
+    font-size: clamp(1.2rem, 1.5vw, 3rem);
+}
+
+.play-again-button {
+    border: 0;
+    outline: 0;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    color: #fff;
+    background-color: #92B2D6;
+    border-radius: 10px;
+}
