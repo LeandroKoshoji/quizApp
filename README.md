@@ -5,8 +5,8 @@
 
 Do you know these 2014 FIFA World Cup uniforms?
 
-<h1>
-    <img src="https://i.ibb.co/7XBjRV9/Screenshot-1.png">
-</h1>
+
+<img src="assets/images/apresentacao.gif" width="500"/>
+
 
 **Note**: I made this quiz to only measure my progress with Vanilla JS! 
